@@ -1,144 +1,149 @@
-public class Pattern {
-    public static void main(string[] args) {
-        pattern1(4); 
-        System.out.println();
-        pattern2(4);
-        System.out.println();
-        pattern3(4);
-        System.out.println();
-        pattern4(5);
-        System.out.println();
-        pattern5(4);
-        System.out.println();
-        pattern6(4);
-        
-        System.out.println();
-        pattern7(4);
-        System.out.println();
-        pattern8(4);
-        // Correct method call
+import java.util.Scanner;
+
+public class Pattern{
+public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    System.out.print("Enter the number:");
+    int n=sc.nextInt();
+    pattern12(n);
+
+}
+private static void pattern12(int n) {
+  for (int i = 1; i <=n; i++) {
+    for (int j = 1; j <=i; j++)
+     {
+       System.out.print(j);
     }
-
-
-
-
-    static void pattern1(int n) {
-        for (int row = 1; row <= n; row++) {
-            for (int col = 1; col <= row; col++) {
-                System.out.print("* ");
-            }
-            System.out.println(); // Move to the next line
-        }
+    for (int j = 1; j <= 2*n-2*i; j++) {
+        System.out.print(" ");
     }
-
-
-
-    static void pattern2(int n) {
-        for (int row = 1; row <= n; row++) {
-            for (int col = 1; col <= n; col++) {
-                System.out.print("* ");
-            }
-            System.out.println(); // Move to the next line
+     for (int j = i; j >=1; j--)
+     {
+       System.out.print(j);
+    }
+ System.out.println();
+}
+}
+private static void pattern11(int n) {
+ for (int i = 0; i <n; i++) {
+    for (int j = 0; j <i; j++)
+     {
+        if(i%2==0 || j%2==0)
+        System.out.print("1");
+        else
+        {
+            System.out.print("0");
         }
     }
+ System.out.println();
+}
+   
+}
 
-
-
-    static void pattern3(int n) {
-       
-        for (int row = 0; row <=2*n; row++) {
-            int cols;
-            cols=row>n ? 2*n-row:row;
-            for (int  col = 1; col <=cols; col++) {
-                System.out.print("* ");
-            }
-             System.out.print("* ");
-                System.out.println(); // Move to the next line
-        }
+private static void pattern10(int n) {
+ for (int i = 1; i <= 2*n-1; i++) {
+    for (int j = 1; j <=i; j++)
+     {
+        System.out.print("*");
     }
-
-
-
-    static void pattern4(int n) {
-        
-        for (int row = 1; row <=n; row++) {
-
-            for ( int col = 1; col <=row; col++) {
-                System.out.print("* ");
-           }
-           System.out.println(); // Move to the next line
-            
-        }
-        for (int row = n-1; row >=1; row--) {
-
-            for ( int col = row; col >=1; col--) {
-                System.out.print("* ");
-            }
-            System.out.println(); // Move to the next line
-            
-        }
+if(i>n){
+    for (int j = 1; j <=(2*n)-i;j++)
+     {
+        System.out.print("*");
     }
+}
+    System.out.println();
+}
+}
+//inverted tringle
+private static void pattern7(int n) {
+   for (int i = 0; i < n; i++) {
 
-
-
-    static void pattern5(int n) {
-       
-        for (int row = 0; row <=2*n; row++) {
-            int cols;
-            cols=row>n ? 2*n-row:row;
-            int spaces=cols;
-            for(int s=0;s<spaces;s++){
-                System.out.print(" ");
-            }
-        
-            for (int  col = 1; col <=cols; col++) {
-                System.out.print("* ");
-            }
-            System.out.println(); // Move to the next line
-        }
+    for (int j = 1; j <=i; j++)
+     {
+        System.out.print(" ");
     }
-
-    static void pattern6(int n) {
-       
-        for (int row = 0; row <=2*n; row++) {
-            int cols;
-            cols=row>n ? 2*n-row:row;
-            int spaces=n-cols;
-            for(int s=0;s<spaces;s++){
-                System.out.print(" ");
-            }
-        
-            for (int  col = 1; col <=cols; col++) {
-                System.out.print("* ");
-            }
-            System.out.println(); // Move to the next line
-        }
+     for (int j = 1; j <=2*n-(2*i+1); j++)
+     {
+        System.out.print("*");
+    }
+     for (int j = 1; j <=i; j++)
+     {
+        System.out.print(" ");
     }
     
-    static void pattern7(int n) {
-        for (int row = 1; row <= n; row++) {
-            int sp=n-row;
-            for(int s=1;s<=sp;s++){
-                System.out.print("  "); 
-            }
-            for (int col = 1; col <= row; col++) {
-                System.out.print("* ");
-            }
-            System.out.println(); // Move to the next line
-        }
-    }
+    System.out.println();
+}
+}
+//tringle
+private static void pattern6(int n) {
+ for (int i = 0; i < n; i++) {
 
-   static void pattern8(int n){
-    for (int row = 0; row < 2*n; row++) {
-        int cols=row>n ?2*n-row:row;
-        int spc=n-row;
-        for (int s = 1; s <=spc; s++) {
-            System.err.print(" ");
-        }
-        for (int col = 1; col <= cols; col++) {
-            System.out.print("*");
-        }
-        System.out.println();
+    for (int j = 1; j <=n-i+1; j++)
+     {
+        System.out.print(" ");
     }
-   }
+     for (int j = 1; j <=2*i+1; j++)
+     {
+        System.out.print("*");
+    }
+     for (int j = 1; j <=n-i+1; j++)
+     {
+        System.out.print(" ");
+    }
+    
+    System.out.println();
+}
+}
+//inverted right angle tringle
+private static void pattern5(int n) {
+   for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <=n-i+1; j++)
+     {
+        System.out.print(j);
+    }
+    System.out.println();
+}
+}
+private static void pattern4(int n) {
+    for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <=i; j++)
+     {
+        System.out.print(i);
+    }
+    System.out.println();
+}
+}
+//right angle tringle
+private static void pattern3(int n) {
+   for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <=i; j++)
+     {
+        System.out.print(j);
+    }
+    System.out.println();
+}
+}
+//right angle tringle
+private static void pattern2(int n) {
+for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <=i; j++)
+     {
+        System.out.print("*");
+    }
+    System.out.println();
+}
+}
+//rectangle
+public static void  pattern1(int n){
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j <n; j++) 
+    {
+            System.out.print("*");
+     }
+    System.out.println();
+}
+
+
+}
 }
